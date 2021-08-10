@@ -1,0 +1,6 @@
+<h1><%= @task.title %></h1>
+<%= @task.details %>
+<p><%= @task.completed %></p>
+
+<button><%= link_to "Task Manager", tasks_path %></button>
+<button><%= link_to "Edit", edit_path(@task) %></button>

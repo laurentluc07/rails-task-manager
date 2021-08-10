@@ -1,0 +1,18 @@
+<h1>My Task Manager</h1>
+
+<% @tasks.each do |task| %>
+<ul>
+  <li>
+  <% if task.completed %>
+  <%= "☑️" %>
+  <% else %>
+  <%= "❌" %>
+  <% end %>
+  <%= link_to task.title, task_path(task) %>
+  <%= link_to "🗑️ ",
+            task_path(task),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %></li>
+</ul>
+<% end %>
+<%= link_to "Add a task", tasks_new_path %>
